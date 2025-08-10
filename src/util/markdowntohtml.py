@@ -1,10 +1,9 @@
-from turtle import listen
-from ..leafnode import LeafNode
-from .splitnodes import text_to_textnodes
-from .textnodeconverter import text_node_to_html_node
-from ..parentnode import ParentNode
-from ..htmlnode import HTMLNode
-from .markdowntoblocks import BlockType, block_to_block_type, markdown_to_blocks
+
+from src.leafnode import LeafNode
+from src.util.splitnodes import text_to_textnodes
+from src.util.textnodeconverter import text_node_to_html_node
+from src.parentnode import ParentNode
+from src.util.markdowntoblocks import BlockType, block_to_block_type, markdown_to_blocks
 
 
 def markdown_to_html_node(markdown):
@@ -89,6 +88,3 @@ def get_list_items(markdown, offset) -> list[list[LeafNode]]:
     parent_nodes.append(ParentNode("li",item))
 
   return parent_nodes
-
-def create_heading_parent_node() -> ParentNode:
-  pass
