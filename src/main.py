@@ -1,4 +1,5 @@
 
+from email.mime import base
 import os
 import shutil
 import sys
@@ -8,8 +9,8 @@ from src.util.markdowntoblocks import BlockType, block_to_block_type, markdown_t
 
 def main():
   basepath = "/"
-  if len(sys.argv) == 0:
-    basepath = sys.argv[0]
+  if len(sys.argv) > 1:
+    basepath = sys.argv[1]
 
   public_path = "docs"
   reset_build_dir(public_path, "static")
